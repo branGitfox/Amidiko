@@ -308,10 +308,41 @@ footer a {
 .hide-menu {
     display: flex;
     flex-direction: column;
-    width: 200px;
-    box-shadow: 0px 0px 40px;
-    position: absolute;
-    top: -2rem;
+    position: fixed;
+    top: -4rem;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    transition: all .5s ease-in-out;
+    align-items: center;
+    background-color: whitesmoke;
+   
+    
+}
+
+.hide-menu a{
+    text-decoration: none;
+    color: color;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.show-menu a{
+    text-decoration: none;
+    color: color;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.show-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    right: 0;
+    position: fixed;
+    top: 3.4rem;
+    z-index: 1;
+    transition: all .5s ease-in-out;
+    background-color: whitesmoke;
 }
 
 @media screen and (max-width:493px){
@@ -322,4 +353,6 @@ footer a {
     .nav-toggle-icon {
         display:block;
     }
+
+    .
 }
