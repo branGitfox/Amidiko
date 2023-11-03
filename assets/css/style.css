@@ -191,5 +191,19 @@ img{
 
 }
 
+.btn-more a {
+    padding: 10px 15px;
+    background-color: blue;
+    color:white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    text-decoration: none;
+}
+
+.btn-more {
+    width: auto;
+    
+
+}
+
 
 
