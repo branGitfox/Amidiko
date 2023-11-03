@@ -305,6 +305,15 @@ footer a {
     height: 40px;
 }
 
+.hide-menu {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0px 0px 40px;
+    position: absolute;
+    top: -2rem;
+}
+
 @media screen and (max-width:493px){
     .nav-links{
         display: none;
