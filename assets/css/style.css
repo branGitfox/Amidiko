@@ -42,6 +42,10 @@ h1 {
     text-decoration: underline;
 }
 
+.show-menu a:hover{
+    text-decoration: underline;
+}
+
 .intro-container {
     width: 100%;    
     border-bottom:solid .3px gray;
