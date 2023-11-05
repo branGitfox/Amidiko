@@ -110,7 +110,6 @@
                 <a href="#">Voir Plus</a>
             </div>
         </section>
-
         <!--section annonces  -->
         <section class="annonces">
             <h2>Annonces</h2>
@@ -135,11 +134,11 @@
             <h2>Me contacter</h2>
             <form method="post">
                 <label for="email">Email</label>
-                <input type="text" name="email" placeholder="Votre email">
+                <input type="email" name="email" placeholder="Votre email" required>
                 <label for="subject">Subject</label>
-                <input type="text" name="subject" placeholder="le subject">
+                <input type="text" name="subject" placeholder="le subject" required>
                 <label for="message">Message</label>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message ici..."></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message ici..." required></textarea>
                 <input type="submit" name="send" id="form-envoyer" value="Envoyer">
             </form>
         </section>
