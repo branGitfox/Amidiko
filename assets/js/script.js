@@ -9,12 +9,12 @@ toggleBtn.addEventListener('click', () => {
 })
 
 //theme mode sombre et mode clair
-
 const switchCircle = document.querySelector('.switch-circle')
 const nav = document.querySelector('nav')
 const footer = document.querySelector('footer')
 const navLinks = document.querySelector('.nav-links')
 const containerBig = document.querySelector('.container')
+const hideMenuDark = document.querySelector('.hide-menu')
 switchContainer.addEventListener('click', () => {
     switchCircle.classList.toggle('leftRight')
     switchCircle.classList.toggle('dark')
@@ -23,5 +23,7 @@ switchContainer.addEventListener('click', () => {
     footer.classList.toggle('footer-dark')
     navLinks.classList.toggle('nav-links-dark')
     containerBig.classList.toggle('container-dark')
+    hideMenuDark.classList.toggle('hide-menu-dark')
+    hideMenuDark.classList.toggle('show-menu-dark')
 })
 

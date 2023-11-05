@@ -275,6 +275,7 @@ footer {
 
 footer a {
     padding: 10px;
+    color: black;
 }
 
 .access a {
@@ -421,7 +422,9 @@ h5 {
 }
 
 /* 
-style pour le mode sombre
+--------------------------------------------------
+-------style pour le mode sombre------------------
+--------------------------------------------------
 */
 
 .nav-dark {
@@ -446,8 +449,22 @@ style pour le mode sombre
     color: white;
 }
 
+.hide-menu-dark {
+    background-color: rgb(91, 87, 87);
+    color: rgb(220, 216, 216);
+}
+
+.show-menu-dark a{
+    background-color: rgb(91, 87, 87);
+    color: rgb(220, 216, 216);
+}
 
 
+/* 
+--------------------------------------------------
+-------la responsive design ------------------
+--------------------------------------------------
+*/
 @media screen and (max-width:493px){
     .nav-links{
         display: none;
