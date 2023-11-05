@@ -266,6 +266,7 @@ footer {
     border-bottom: solid .3px gray;
     padding-bottom: 20px;
     text-align: center;
+    background-color:  whitesmoke;
 }
 
 .rs-links {
@@ -374,6 +375,8 @@ h5 {
     box-shadow: inset 0px 0px 6px;
     display: flex;
     align-items: center;
+    transition: all .5s ease-in-out;
+
 }
 
 .switch-circle {
@@ -383,8 +386,67 @@ h5 {
     box-shadow: outset 0px 0px 6px;
     background-color: white;
     border: solid 1px rgb(224, 224, 224);
-    
+    transition: all .5s ease-in-out; 
 }
+
+.leftRight {
+    transform: translateX(40px);
+    transition: all .5s ease-in-out;
+}
+
+.dark {
+    background-color: rgb(53, 52, 52);
+    border: solid 1px rgb(71, 69, 69);
+    box-shadow: outset 0px 0px 6px white;
+    transition: all .5s ease-in-out; 
+    width: 30px;
+    height: 30px;
+
+}
+
+.switchDark {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(91, 87, 87);
+    position: relative;
+    margin:10px auto;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: inset 0px 0px 6px white;
+    display: flex;
+    align-items: center;
+    transition: all .5s ease-in-out;
+}
+
+/* 
+style pour le mode sombre
+*/
+
+.nav-dark {
+    background-color: rgb(91, 87, 87);
+}
+
+.footer-dark {
+    background-color: rgb(91, 87, 87);
+    color: rgb(220, 216, 216);
+}
+
+.footer-dark a{
+    color: rgb(220, 216, 216);
+}
+
+.nav-links-dark a {
+    color: rgb(220, 216, 216);
+}
+
+.container-dark {
+    background-color: black;
+    color: white;
+}
+
+
 
 @media screen and (max-width:493px){
     .nav-links{
