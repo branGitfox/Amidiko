@@ -123,11 +123,6 @@ p span {
 
 /* Mode sombre */
 
-.container-dark {
-    background-color: rgba(0, 0, 0, 0.895);
-    color: white;
-}
-
 .header-dark  {
     background-color: rgb(91, 87, 87);
 
@@ -136,6 +131,11 @@ p span {
 .header-dark h2 {
     color: rgb(220, 216, 216);
 
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.895);
+    color: white;
 }
 
 
