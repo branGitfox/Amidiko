@@ -27,7 +27,7 @@ switchContainer.addEventListener("click", () => {
   containerBig.classList.toggle("container-dark");
   hideMenuDark.classList.toggle("hide-menu-dark");
   hideMenuDark.classList.toggle("show-menu-dark");
-});
+})
 
 // mode sombre automatique
 let themeCode = localStorage.getItem("themeCode");
