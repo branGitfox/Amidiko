@@ -33,6 +33,8 @@ h2 {
 
 header a {
     margin-left: 1rem;
+    text-decoration: none;
+    color: blue;
 }
 
 
@@ -94,12 +96,9 @@ h3 {
 .content {
     width: 100%;
     height: calc(100% - 20px);
-    padding: 10px;
-    text-align: center;
+    padding: 20px;
     margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content:center;
+ 
 }
 
 p {
