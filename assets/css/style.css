@@ -421,6 +421,8 @@ h5 {
     transition: all .5s ease-in-out;
 }
 
+
+
 /* 
 --------------------------------------------------
 -------style pour le mode sombre------------------
@@ -459,6 +461,18 @@ h5 {
     color: rgb(220, 216, 216);
 }
 
+.sombre-icon {
+    position: relative;
+    left: 3.3rem;
+    top: -2.2rem;
+}
+
+.clair-icon {
+    position: relative;
+    left: -3.3rem;
+    top: 2.2rem;
+    color: orange;
+}
 
 /* 
 --------------------------------------------------
