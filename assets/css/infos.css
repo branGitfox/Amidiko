@@ -96,9 +96,9 @@ h3 {
 .content {
     width: 100%;
     height: calc(100% - 20px);
-    padding: 20px;
+    padding: 40px;
     margin-top: 10px;
- 
+    line-height: 30px;
 }
 
 p {
