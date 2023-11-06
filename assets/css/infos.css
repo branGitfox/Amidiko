@@ -58,7 +58,7 @@ header a {
     height: calc(100vh - 70px);
     margin-bottom: 10px;
     display: grid;
-    grid-template-rows: 4fr 4fr 1fr;
+    grid-template-rows: 6fr 6fr 1fr;
     gap: 10px;
     border: none;
 }
