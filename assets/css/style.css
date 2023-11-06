@@ -445,7 +445,7 @@ h5 {
 }
 
 .container-dark {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.895);
     color: white;
 }
 
