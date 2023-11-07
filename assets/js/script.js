@@ -2,26 +2,28 @@ const toggleBtn = document.querySelector(".nav-toggle-icon");
 const hideMenu = document.querySelector(".hide-menu");
 const container = document.querySelector(".news");
 const switchContainer = document.querySelector(".switch");
-
-toggleBtn.addEventListener("click", () => {
-  hideMenu.classList.toggle("show-menu");
-  hideMenu.classList.toggle("hide-menu");
-});
-
-
-const close = document.querySelector('.close')
-close.addEventListener('click', () => {
-  hideMenu.classList.toggle('show-menu')
-  hideMenu.classList.toggle("hide-menu");
-})
-
-//theme mode sombre et mode clair
 const switchCircle = document.querySelector(".switch-circle");
 const nav = document.querySelector("nav");
 const footer = document.querySelector("footer");
 const navLinks = document.querySelector(".nav-links");
 const containerBig = document.querySelector(".container");
 const hideMenuDark = document.querySelector(".hide-menu");
+const close = document.querySelector('.close')
+
+//affichage et fermeture du menu responsive
+toggleBtn.addEventListener("click", () => {
+  hideMenu.classList.toggle("show-menu");
+  hideMenu.classList.toggle("hide-menu");
+});
+
+
+close.addEventListener('click', () => {
+  hideMenu.classList.toggle('show-menu')
+  hideMenu.classList.toggle("hide-menu");
+})
+
+//theme mode sombre et mode clair
+
 switchContainer.addEventListener("click", () => {
   let themeCode = localStorage.getItem("themeCode");
   localStorage.setItem("themeCode", ++themeCode);
