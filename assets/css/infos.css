@@ -74,15 +74,17 @@ header a {
 .imgs-container > div,
  .informations > div {
     /* overflow: hidden;  */
-    /* border-radius: 5px; */
+    border-radius: 5px;
     border: solid .1px rgb(182, 182, 182);
  
 }
 
+
+
 .imgs-container > div img {
     width: 100%;
     height:100%;
-    /* border-radius: 5px; */
+    border-radius: 5px;
 }
 
 h3 {
