@@ -142,6 +142,16 @@ body{
     color: white;
 }
 
+/* responsive */
+
+@media screen and (max-width:377px) {
+    .contact .content p {
+        font-size: 12px;
+        word-break: break-all;
+    }
+}
+
+
 
 
 
