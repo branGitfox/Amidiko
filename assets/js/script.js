@@ -8,6 +8,13 @@ toggleBtn.addEventListener("click", () => {
   hideMenu.classList.toggle("hide-menu");
 });
 
+
+const close = document.querySelector('.close')
+close.addEventListener('click', () => {
+  hideMenu.classList.toggle('show-menu')
+  hideMenu.classList.toggle("hide-menu");
+})
+
 //theme mode sombre et mode clair
 const switchCircle = document.querySelector(".switch-circle");
 const nav = document.querySelector("nav");
