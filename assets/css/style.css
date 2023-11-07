@@ -32,7 +32,7 @@ h1 {
 }
 
 .nav-links a{
-    padding: 20px;
+    padding: 5px;
     text-decoration: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(50, 48, 48);
@@ -215,6 +215,7 @@ img{
     background-color: rgba(0, 0, 255, 0.866);
 }
 
+
 .btn-more {
     width: auto;
 }
@@ -322,15 +323,13 @@ footer a {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: -4rem;
+    top: -5.5rem;
     z-index: 1;
     left: 0;
     right: 0;
     transition: all .5s ease-in-out;
     align-items: center;
-    background-color: whitesmoke;
-   
-    
+    background-color: whitesmoke;  
 }
 
 .hide-menu a{
@@ -453,6 +452,7 @@ h5 {
 .sign-in-btn a:hover {
     background-color: rgba(0, 0, 255, 0.8);
 }
+
 
 
 
