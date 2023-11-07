@@ -202,3 +202,18 @@ img{
     height: 100%;
     border-radius: 50%;
 }
+
+/* theme sombre */
+
+
+
+
+.nav-dark  {
+    background-color: rgb(91, 87, 87);
+
+}
+
+.nav-dark h2 {
+    color: rgb(220, 216, 216);
+
+}
