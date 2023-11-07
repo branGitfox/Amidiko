@@ -208,6 +208,11 @@ img{
     color:white;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
     text-decoration: none;
+    border-radius: 2px;
+}
+
+.btn-more a:hover {
+    background-color: rgba(0, 0, 255, 0.866);
 }
 
 .btn-more {
@@ -250,6 +255,7 @@ label {
     margin-top: 7px;
     border: none;
     color: white;
+    border-radius: 2px;
 }
 
 #form-envoyer:hover{
