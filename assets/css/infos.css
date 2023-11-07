@@ -98,7 +98,7 @@ h3 {
 .content {
     width: 100%;
     height: calc(100% - 10px);
-    padding: 40px;
+    padding: 20px;
     line-height: 25px;
     /* border: solid white; */
 }
