@@ -193,8 +193,16 @@ img{
     border-radius: 2px;
 }
 
+.filtre-link:hover{
+    background-color: rgba(128, 128, 128, 0.826);
+}
+
  .active { 
     background-color: blue;
+}
+
+.active:hover{
+    background-color: rgba(0, 0, 255, 0.815);
 }
 
 .profil-container img {
