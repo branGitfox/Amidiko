@@ -121,6 +121,14 @@ color: blue;
     font-weight: 500;
     color: black;
 }
+h4 {
+    position: relative;
+}
+h4 span {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
 
 .user-posts{
     border-bottom: solid .1px gray;
