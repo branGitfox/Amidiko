@@ -104,3 +104,15 @@ input:focus{
     outline: none;
     border: none;
 }
+
+/* mode sombre */
+
+.nav-dark  {
+    background-color: rgb(91, 87, 87);
+
+}
+
+.nav-dark h2 {
+    color: rgb(220, 216, 216);
+
+}
