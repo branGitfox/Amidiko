@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background-color: whitesmoke;
+    position: fixed;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    
+}
+
+h2 {
+    display: inline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 1rem;
+    color: rgb(50, 48, 48);
+}
+
+header a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: blue;
+}
+
+.img-profil,.user-stat
+ {
+    width: 100%;
+    border: solid;
+    position: relative;
+    top: 4rem;
+    display: flex;
+   
+}
+
+.img-profil {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 0 0;
+    margin-bottom: 10px;
+}
+.img-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: solid 1.5px blue;
+    padding: 1px;
+    position: relative;
+}
+
+.edit {
+position: absolute;
+left: 70%;
+top: 80%;
+z-index: 1;
+color: blue;
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.user-email span {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
+
+.user-email{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.info-user{
+    border-bottom: solid .1px gray;
+}
+
+.user-stat {
+    flex-direction: column;   
+}
