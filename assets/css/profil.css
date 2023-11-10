@@ -130,4 +130,16 @@ color: blue;
     background-color: whitesmoke;
 }
 
+/* mode sombre */
+
+.header-dark  {
+    background-color: rgb(91, 87, 87);
+
+}
+
+.header-dark h2 {
+    color: rgb(220, 216, 216);
+
+}
+
 
