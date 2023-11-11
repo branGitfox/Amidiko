@@ -132,6 +132,7 @@ img{
 #emplois-container{
 position: relative;
 top: 4.5rem;
+margin-bottom: 15px;
 }
 
 .post-date{
