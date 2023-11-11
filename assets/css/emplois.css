@@ -1,6 +1,6 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -61,22 +61,7 @@ input {
     border-radius: 3px;
     border: solid .1px gray;
 }
-select {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 3px;
-}
 
-select:focus {
-    outline: none;
-    border: solid .5px blue;
-}
-
-textarea {
-    margin-bottom: 15px;
-    border-radius: 3px;
-
-}
 
 label {
     margin-bottom: 5px;
@@ -87,6 +72,7 @@ label {
 textarea:focus{
     border: solid .5px blue;
     outline: none;
+
 }
 
 input:focus{
@@ -108,11 +94,12 @@ input:focus{
     outline: none;
     border: none;
 }
-/* 
-.facultatif {
-    margin-bottom: 20px;
-} */
 
+textarea {
+    margin-bottom: 15px;
+    border-radius: 3px;
+
+}
 /* mode sombre */
 
 .nav-dark  {
