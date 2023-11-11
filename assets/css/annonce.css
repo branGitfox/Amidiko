@@ -93,6 +93,11 @@ input:focus{
     border: solid .5px blue;
     outline: none;
 }
+label {
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    word-break: keep-all;
+}
 
 /* mode sombre */
 
