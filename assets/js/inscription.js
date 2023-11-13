@@ -29,3 +29,9 @@ if(themeCode % 2 != 0){
     closeEye.style.color = 'black'
     openEye.style.color = 'black'
 }
+
+const error = document.querySelector('.error')
+
+setTimeout(() => {
+    error.remove()
+}, 2000)
