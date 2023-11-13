@@ -88,7 +88,7 @@ h2 {
 
 .close, .open{
     position: absolute;
-    top: 47%;
+    top: 46.4%;
     left: 96%;
 }
 
@@ -107,7 +107,7 @@ h2 {
 @media  screen and (max-width:600px) {
     .close, .open{
         position: absolute;
-        top: 47%;
+        top: 46.4%;
         left: 90%;
     }
     
