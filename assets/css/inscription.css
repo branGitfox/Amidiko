@@ -95,3 +95,17 @@ h2 {
 }
 
 
+.close, .open{
+    position: absolute;
+    top: 17.6rem;
+    left: 96%;
+}
+
+@media  screen and (max-width:600px) {
+    .close, .open{
+        position: absolute;
+        top: 17.6rem;
+        left: 90%;
+    }
+    
+}
