@@ -23,16 +23,6 @@ input {
     border-radius: 3px;
     border: solid .1px gray;
 }
-select {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 3px;
-}
-
-select:focus {
-    outline: none;
-    border: solid .5px blue;
-}
 
 .container {
     width: 100%;

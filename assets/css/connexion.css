@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: 5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    
+}
+
+input {
+    padding: 10px;
+    height: 40px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    border: solid .1px gray;
+}
+
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+label {
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    word-break: keep-all;
+}
+
+textarea:focus{
+    border: solid .5px blue;
+    outline: none;
+}
+
+.radio {
+    height: 20px;
+    display: inline-block;
+}
+
+.radio-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+input:focus{
+    border: solid .5px blue;
+    outline: none;
+}
+
+h2 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+#signIn {
+    background-color: blue;
+    color: white;
+    border: none;
+    letter-spacing: 2px;
+}
+
+#signIn:hover {
+    background-color: rgba(0, 0, 255, 0.833);
+}
+
+#signIn:focus {
+    outline: none;
+    border: none;
+}
+
+.already {
+    text-align: center;
+    margin: 10px;
+}
+
+
+.close, .open{
+    position: absolute;
+    top: 47%;
+    left: 96%;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.open:hover {
+    cursor: pointer;
+}
+
+.close {
+    display: none;
+}
+
+@media  screen and (max-width:600px) {
+    .close, .open{
+        position: absolute;
+        top: 47%;
+        left: 90%;
+    }
+    
+}
