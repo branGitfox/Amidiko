@@ -71,7 +71,7 @@ class UserActions {
                 if(in_array($image_ext, $allowed_ext)){
                 $new_image_name = time().'.'.$image_ext;
                     if(move_uploaded_file($image_tmp, '../../assets/img/'. $new_image_name)){
-                        $this->signIN($user_name, $user_firstname, $user_email, $user_password,$user_sexe ,$new_image_name );
+                        $this->signIN($user_name, $user_firstname, $user_email, $user_password, $user_sexe, $new_image_name);
                     }
                  }
              }

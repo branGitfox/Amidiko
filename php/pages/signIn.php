@@ -3,6 +3,15 @@ declare(strict_types= 1);
 require '../class/UserActions.php';
 $user = new UserActions();
 $user->checkForm();
+if(!empty($user->success())){
+    header('location:logIn');
+}
+
+$user_name=isset($_POST['user_name'])?htmlentities(htmlspecialchars($_POST['user_name'])):null;
+$user_firstname=isset($_POST['user_firstname'])?htmlentities(htmlspecialchars($_POST['user_name'])):null;
+$user_email=isset($_POST['user_email'])?htmlentities(htmlspecialchars($_POST['user_email'])):null;
+$user_password=isset($_POST['user_password'])?htmlentities(htmlspecialchars($_POST['user_name'])):null;
+$user_sexe=isset($_POST['user_sexe'])?htmlentities(htmlspecialchars($_POST['user_sexe'])):null;
 ?>
 
 <!DOCTYPE html>
@@ -16,15 +25,20 @@ $user->checkForm();
 <body>
     <div class="container">
         <h2>Inscription</h2>
+        <?php if(!empty($user->error())):?>
+            <div class="error">
+                <?= $user->error() ?>
+            </div>
+            <?php endif ?>
         <form action="" method="post" enctype="multipart/form-data">
             <label for="name">Nom</label>
-            <input type="text" id="name" required placeholder="Entrez votre Nom"  name="user_name">
+            <input type="text" id="name" required placeholder="Entrez votre Nom"  name="user_name"  value="<?=$user_name?>" >
             <label for="firstname" id="firstname">Prenom</label>
-            <input type="text" id="firstname" required placeholder="Entrez votre Prenom" name="user_firstname">
+            <input type="text" id="firstname" required placeholder="Entrez votre Prenom" name="user_firstname" value="<?=$user_firstname?>">
             <label for="email">Email</label>
-            <input type="email" id="email" required placeholder="Entrez votre Email" name="user_email">
+            <input type="email" id="email" required placeholder="Entrez votre Email" name="user_email" value="<?=$user_email?>">
             <label for="password">Mot de passe</label>
-            <input type="password" id="password" required placeholder="Entrez votre Mot de passe" name="user_password">
+            <input type="password" id="password" required placeholder="Entrez votre Mot de passe" name="user_password" value="<?=$user_password?>">
             <svg class="open" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                 <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
                 <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
@@ -36,9 +50,9 @@ $user->checkForm();
               </svg>
             <div class="radio-container">
                 <label for="men">Homme</label>            
-                <input type="radio" name="user_sexe" value="homme" class="radio" id="men">
+                <input type="radio" name="user_sexe" value="homme" class="radio" id="men" <?php if($user_sexe == 'homme'):?> checked <?php endif ?>>
                 <label for="women">Femme</label>
-                <input type="radio" name="user_sexe" value="femme" class="radio"  id="women">
+                <input type="radio" name="user_sexe" value="femme" class="radio"  id="women" <?php if($user_sexe == 'femme'):?> checked <?php endif ?>>
             </div>
             <label for="picture">Photo de Profil</label>
             <input type="file" id="picture" name="user_image">
