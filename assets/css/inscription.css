@@ -101,6 +101,18 @@ h2 {
     left: 96%;
 }
 
+.close:hover {
+    cursor: pointer;
+}
+
+.open:hover {
+    cursor: pointer;
+}
+
+.close {
+    display: none;
+}
+
 @media  screen and (max-width:600px) {
     .close, .open{
         position: absolute;
