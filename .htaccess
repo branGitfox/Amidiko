@@ -1,4 +1,5 @@
 RewriteEngine on
 
 RewriteRule ^/?$ index.php
+RewriteRule ^signIn?$ ./php/pages/signIn.php
 
