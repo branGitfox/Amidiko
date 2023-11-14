@@ -5,4 +5,3 @@ RewriteRule ^signIn?$ ./php/pages/signIn.php
 RewriteRule ^logIn?$ ./php/pages/logIn.php
 RewriteRule ^logEd?$ ./php/pages/logEd.php
 
-

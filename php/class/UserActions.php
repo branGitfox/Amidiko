@@ -70,7 +70,7 @@ class UserActions {
                 $allowed_ext = ['jpg', 'png', 'gif'];
                 if(in_array($image_ext, $allowed_ext)){
                 $new_image_name = time().'.'.$image_ext;
-                    if(move_uploaded_file($image_tmp, '../../assets/img/'. $new_image_name)){
+                    if(move_uploaded_file($image_tmp, '../Admin/user_images/'. $new_image_name)){
                         $this->signIN($user_name, $user_firstname, $user_email, $user_password, $user_sexe, $new_image_name);
                     }
                  }
@@ -133,7 +133,7 @@ public function test()
         if($query->rowCount() > 0){
           $user = $query->fetch();
           if(password_verify($user_password, $user['user_password'])){
-            $this->sessionUser($user['user_name'], $user['user_firstname'], $user['user_email'], $user['user_password'], $user['user_image']);
+            $this->sessionUser($user['id'],$user['user_name'], $user['user_firstname'], $user['user_email'], $user['user_password'], $user['user_image']);
             header('location:logEd');
         }else {
             $this->getError('Verifier vos Informations');
@@ -144,10 +144,11 @@ public function test()
 
     }
 
-    public function sessionUser($user_name, $user_firstname, $user_email, $user_password, $user_image){
+    public function sessionUser($user_id,$user_name, $user_firstname, $user_email, $user_password, $user_image){
         if(session_status() == PHP_SESSION_NONE){
             session_start();
             $_SESSION['user']=[
+                'user_id' => $user_id,
                 'user_name' => $user_name,
                 'user_firstname' => $user_firstname,
                 'user_email' => $user_email,
@@ -156,6 +157,8 @@ public function test()
             ];
         }
     }
+
+    
     
 
 }

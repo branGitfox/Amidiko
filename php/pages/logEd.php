@@ -1,6 +1,11 @@
 <?php 
+require '../class/UserActions.php';
+require '../class/POstActions.php';
+
 session_start();
 $user_firstname = $_SESSION['user']['user_firstname'];
+$user_id = $_SESSION['user']['user_id'];
+$post = new PostActions($user_id);
 
 
 ?>
@@ -58,9 +63,6 @@ $user_firstname = $_SESSION['user']['user_firstname'];
                 <p>Vous voulez vendre? Vous voulez acheter? des articles que se soit informatique , vestimentaire, et
                     bien d'autres. Alors <em>Amidiko</em> est là pour vous. Inscrivez-vous et connectez vous pour
                     pouvoir profiter de nos services.</p>
-                <div class="sign-in-btn">
-                    <a href="signIn">S'inscrire</a>
-                </div>
             </div>
         </div>
 
@@ -68,19 +70,20 @@ $user_firstname = $_SESSION['user']['user_firstname'];
         <section class="news">
             <h2>Nouveauté</h2>
             <div class="new-container">
+                <?php foreach($post->getLastPost() as $post) :?>
                 <div class="post-container">
                     <div class="post-header">
                         <div class="profil">
                             <div class="new-img-container">
-                                <img src="./assets/img/55704192-avatar-profil-homme-icône.jpg" loading="lazy">
+                                <img src="./php/Admin/user_images/<?=$post['user_image']?>" loading="lazy">
                             </div>
                         </div>
                         <div class="profil-info">
                             <div class="name">
-                                <p>Brandon</p>
+                                <p><?= $post['user_name']?></p>
                             </div>
                             <div class="date">
-                                <p>17/01/2004</p>
+                                <p><?= substr($post['post_date'], 0, 10)?></p>
                             </div>
                         </div>
                     </div>
@@ -100,6 +103,7 @@ $user_firstname = $_SESSION['user']['user_firstname'];
                         </div>
                     </div>
                 </div>
+                <?php endforeach?>
                 <div class="post-container">
                     <div class="post-header">
                         <div class="profil">
