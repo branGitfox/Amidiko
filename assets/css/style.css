@@ -541,7 +541,7 @@ h5 {
 -------la responsive design ------------------
 --------------------------------------------------
 */
-@media screen and (max-width:493px){
+@media screen and (max-width:600px){
     .nav-links{
         display: none;
     }

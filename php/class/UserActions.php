@@ -133,7 +133,8 @@ public function test()
         if($query->rowCount() > 0){
           $user = $query->fetch();
           if(password_verify($user_password, $user['user_password'])){
-            header('location:signIn');
+            $this->sessionUser($user['user_name'], $user['user_firstname'], $user['user_email'], $user['user_password'], $user['user_image']);
+            header('location:logEd');
         }else {
             $this->getError('Verifier vos Informations');
         }
@@ -141,6 +142,19 @@ public function test()
         $this->getError('Ce compte n\'existe pas');
     }
 
+    }
+
+    public function sessionUser($user_name, $user_firstname, $user_email, $user_password, $user_image){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+            $_SESSION['user']=[
+                'user_name' => $user_name,
+                'user_firstname' => $user_firstname,
+                'user_email' => $user_email,
+                'user_password' => $user_password,
+                'user_image' => $user_image
+            ];
+        }
     }
     
 
