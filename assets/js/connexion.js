@@ -1,6 +1,7 @@
 const closeEye = document.querySelector('.close')
 const openEye = document.querySelector('.open')
 const input = document.querySelector('#password')
+const error = document.querySelector('.error')
 
 
 openEye.addEventListener('click', () => {
@@ -30,3 +31,7 @@ if(themeCode % 2 != 0){
     closeEye.style.color = 'black'
     openEye.style.color = 'black'
 }
+
+setTimeout(() => {
+    error.remove()
+}, 2000)

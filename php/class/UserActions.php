@@ -91,11 +91,11 @@ class UserActions {
     }
 }
 
-private function test() 
+public function test() 
 {
     if(isset($_POST['envoyer'])){
         
-        if(isset($_POST['user_name'], $_POST['user_firstname'], $_POST['user_email'] )){
+        if(isset($_POST['user_email'], $_POST['user_password'] )){
            echo $_POST['user_email'];
         }
       }
@@ -117,15 +117,31 @@ private function test()
 
     public function checkUser() {
         if(isset($_POST['envoyer'])){
-            if(isset($_POST['user_email'], $_POST['user_password']) && !empty($_POST['user_password']) && !empty($_POST['user_email']) && !empty($_POST['user_password']))
+            if(isset($_POST['user_email'], $_POST['user_password']) 
+            && !empty($_POST['user_email']) 
+            && !empty($_POST['user_password'])){
+                $user_email = htmlentities(htmlspecialchars($_POST['user_email']));
+                $user_password = htmlentities(htmlspecialchars($_POST['user_password']));
+                $this->logIn($user_email, $user_password);
+            }
         }
     }
 
     public function logIn($user_email, $user_password) {
-
+        $query = $this->getPdo()->prepare('SELECT * FROM users WHERE user_email = ?');
+        $query->execute([$user_email]);
+        if($query->rowCount() > 0){
+          $user = $query->fetch();
+          if(password_verify($user_password, $user['user_password'])){
+            header('location:signIn');
+        }else {
+            $this->getError('Verifier vos Informations');
+        }
+    }else {
+        $this->getError('Ce compte n\'existe pas');
     }
 
-
+    }
     
 
 }
