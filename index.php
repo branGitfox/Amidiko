@@ -64,7 +64,7 @@
                     <div class="post-header">
                         <div class="profil">
                             <div class="new-img-container">
-                                <img src="../../../assets/img/55704192-avatar-profil-homme-icône.jpg" loading="lazy">
+                                <img src="./assets/img/55704192-avatar-profil-homme-icône.jpg" loading="lazy">
                             </div>
                         </div>
                         <div class="profil-info">
@@ -96,7 +96,7 @@
                     <div class="post-header">
                         <div class="profil">
                             <div class="new-img-container">
-                                <img src="../../../assets/img/images.jfif" alt="">
+                                <img src="./assets/img/images.jfif" alt="">
                             </div>
                         </div>
                         <div class="profil-info">

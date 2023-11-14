@@ -9,7 +9,7 @@ class UserActions {
     private $pdo;
 
 
-    public function connect() {
+    private function connect() {
         try{
 
             return new PDO('mysql:host='.$this->host.';dbname='.$this->dbname.';,'. $this->user, 'root');
@@ -26,11 +26,11 @@ class UserActions {
         return $this->pdo;
     }
 
-    public function getError($error) {
+    private function getError($error) {
         $this->error = $error;  
     }
 
-    public function getSuccess($success) {
+    private function getSuccess($success) {
         $this->success = $success;  
     }
 
@@ -91,7 +91,7 @@ class UserActions {
     }
 }
 
-public function test() 
+private function test() 
 {
     if(isset($_POST['envoyer'])){
         
@@ -102,7 +102,7 @@ public function test()
  } 
 
 
-    public function signIn($user_name, $user_firstname, $user_email, $user_password,$user_sexe, $user_image ){
+    private function signIn($user_name, $user_firstname, $user_email, $user_password,$user_sexe, $user_image ){
         $query = $this->getPdo()->prepare('SELECT *  FROM  users WHERE user_email = ?');
         $query->execute([$user_email]);
         if($query->rowCount() > 0){
@@ -113,6 +113,16 @@ public function test()
             $insert->execute([$user_name, $user_firstname,$user_email,$user_password,$user_sexe ,$user_image ]);
             $this->getSuccess('Inscription reussi');
         }
+    }
+
+    public function checkUser() {
+        if(isset($_POST['envoyer'])){
+            if(isset($_POST['user_email'], $_POST['user_password']) && !empty($_POST['user_password']) && !empty($_POST['user_email']) && !empty($_POST['user_password']))
+        }
+    }
+
+    public function logIn($user_email, $user_password) {
+
     }
 
 
