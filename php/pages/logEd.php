@@ -80,7 +80,7 @@ $post = new PostActions($user_id);
                         </div>
                         <div class="profil-info">
                             <div class="name">
-                                <p><?= $post['user_name']?></p>
+                                <p><?= $post['user_firstname']?></p>
                             </div>
                             <div class="date">
                                 <p><?= substr($post['post_date'], 0, 10)?></p>
@@ -88,58 +88,26 @@ $post = new PostActions($user_id);
                         </div>
                     </div>
                     <div class="post-body">
-                        <img src="../../../assets/img/2211.jpg" alt="">
+                        <img src="./php/Admin/post_images/<?= $post['post_img1'] ?>" alt="">
                     </div>
                     <div class="post-footer">
                         <div class="btn-info">
-                            <a href="#">Infos</a>
+                            <a href="showPost/<?=$post['post_id']?>">Infos</a>
                         </div>
                         <div class="likes">
                             <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-heart-fill" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                                </svg> 32 likes</p>
+                                </svg> <?=$post['post_likes']?> interessé(e)<?php if((int)($post['post_likes']) > 1){echo 's';}?></p>
                         </div>
                     </div>
+                   
                 </div>
-                <?php endforeach?>
-                <div class="post-container">
-                    <div class="post-header">
-                        <div class="profil">
-                            <div class="new-img-container">
-                                <img src="./assets/img/images.jfif" alt="">
-                            </div>
-                        </div>
-                        <div class="profil-info">
-                            <div class="name">
-                                <p>Brandon</p>
-                            </div>
-                            <div class="date">
-                                <p>17/01/2004</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post-body">
-                        <img src="../../../assets/img/2211.jpg" alt="">
-                    </div>
-                    <div class="post-footer">
-                        <div class="btn-info">
-                            <a href="#">Infos</a>
-                        </div>
-                        <div class="likes">
-                            <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-heart-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                                </svg> 32 likes</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                <?php endforeach ;?>
+            </div>   
             <div class="btn-more">
-                <a href="#">Voir Plus</a>
+                <a href="morePost">Voir Plus</a>
             </div>
         </section>
 
@@ -201,7 +169,7 @@ $post = new PostActions($user_id);
                 </div>
             </div>
             <div class="btn-more" id="more2">
-                <a href="#">Voir Plus</a>
+                <a href="">Voir Plus</a>
             </div>
         </section>
 

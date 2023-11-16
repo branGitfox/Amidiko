@@ -41,7 +41,7 @@ $login->checkUser();
               </svg>
                 <input type="submit" value="s'inscire" id="signIn" name="envoyer">
             <div class="already">
-                <p>Pas encore de Compte? <a href="#">S'inscrire</a></p>
+                <p>Pas encore de Compte? <a href="signIn">S'inscrire</a></p>
             </div>
         </form>
     </div>

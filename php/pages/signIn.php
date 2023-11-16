@@ -58,7 +58,7 @@ $user_sexe=isset($_POST['user_sexe'])?htmlentities(htmlspecialchars($_POST['user
             <input type="file" id="picture" name="user_image">
             <input type="submit" value="s'inscire" id="signIn" name="envoyer">
             <div class="already">
-                <p>Deja inscrit? <a href="#">Se connecter</a></p>
+                <p>Deja inscrit? <a href="logIn">Se connecter</a></p>
             </div>
         </form>
     </div>

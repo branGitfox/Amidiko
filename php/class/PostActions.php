@@ -2,18 +2,50 @@
 
 class PostActions extends UserActions{
     private $user_id;
-    public function __construct($user_id) {
+    public function __construct($user_id=null) {
         $this->user_id = $user_id;
     }
 
+/**
+ * return last (3) posts
+ */
 
     public function getLastPost() {
         $query = Parent::getPdo()
-        ->prepare("SELECT * FROM posts  INNER JOIN users ON users.id = posts.user_id WHERE posts.user_id != ? LIMIT 3");
+        ->prepare("SELECT * FROM posts  INNER JOIN users ON users.id = posts.user_id WHERE posts.user_id != ?  ORDER BY posts.post_id DESC LIMIT 3");
         $query->execute([$this->user_id]);
         $post = $query->fetchAll();
         return $post;
     }
 
+
+    public  function getLastRandomPost() {
+        $query = Parent::getPdo()
+        ->prepare('SELECT * FROM posts INNER JOIN users ON users.id = posts.user_id ORDER BY posts.post_id DESC LIMIT 3');
+        $query->execute();
+        $data = $query->fetchAll();
+        return $data;
+    }
+
+    public function getPostById($id) {
+        $query = Parent::getPdo()
+        ->prepare('SELECT * FROM posts INNER JOIN users ON users.id = posts.post_id WHERE posts.post_id = ?');
+        $query->execute([$id]);
+        $post = $query->fetch();
+        return $post;
+    }
+
+    public function getPostId(){
+        if(isset($_GET['post_id']) && !empty($_GET['post_id'])){
+            if(is_numeric($_GET['post_id'])){
+                $post_id =(int)$_GET['post_id'];
+                return $post_id;
+         }else {
+            return false;
+         }
+     } else{
+        return false;
+     }
+}
 
 }

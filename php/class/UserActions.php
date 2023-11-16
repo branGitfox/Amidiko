@@ -68,7 +68,7 @@ class UserActions {
                 $explode_image = explode('.', $image_name);
                 $image_ext = end($explode_image);
                 $allowed_ext = ['jpg', 'png', 'gif'];
-                if(in_array($image_ext, $allowed_ext)){
+                if(in_array(strtolower($image_ext), $allowed_ext)){
                 $new_image_name = time().'.'.$image_ext;
                     if(move_uploaded_file($image_tmp, '../Admin/user_images/'. $new_image_name)){
                         $this->signIN($user_name, $user_firstname, $user_email, $user_password, $user_sexe, $new_image_name);
