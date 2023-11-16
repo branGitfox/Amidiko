@@ -56,4 +56,10 @@ class PostActions extends UserActions{
         }
     }
 
+    public function newPost() {
+        
+    }
+
+    
+
 }

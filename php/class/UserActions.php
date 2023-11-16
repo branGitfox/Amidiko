@@ -158,6 +158,12 @@ public function test()
         }
     }
 
+    public function getUseImageprofil($id){
+        $query = $this->getPdo()->prepare('SELECT user_image FROM users WHERE id = ?');
+        $query->execute([$id]);
+        return  $query->fetch();
+    }
+
     
     
 

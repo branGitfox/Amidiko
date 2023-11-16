@@ -7,4 +7,5 @@ RewriteRule ^logEd?$ ./php/pages/logEd.php
 RewriteRule ^showPost/([0-9]+) ./php/pages/showPost.php?post_id=$1
 RewriteRule ^showPost/([a-z]+) ./php/pages/postNotFound.php
 RewriteRule ^morePost?$ ./php/pages/morePost.php
+RewriteRule ^newPost?$ ./php/pages/newPost.php
 

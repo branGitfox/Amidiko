@@ -30,7 +30,7 @@ $post = new PostActions($user_id);
                 <h1>Amidiko.</h1>
             </div>
             <div class="nav-links">
-                <a href="">Vendre</a>
+                <a href="newPost">Vendre</a>
                 <a href="">Annonces</a>
                 <a href="">Emplois</a>
                 <a href=""><?= $user_firstname ?></a>
@@ -44,7 +44,7 @@ $post = new PostActions($user_id);
 
         <!-- MENU TOGGLE -->
         <div class="hide-menu">
-            <a href="">Vendre</a>
+            <a href="newPost">Vendre</a>
             <a href="">Annonces</a>
             <a href="">Emplois</a>
             <a href=""><?= $user_firstname ?></a>
