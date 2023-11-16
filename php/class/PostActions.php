@@ -31,8 +31,10 @@ class PostActions extends UserActions{
         $query = Parent::getPdo()
         ->prepare('SELECT * FROM posts INNER JOIN users ON users.id = posts.post_id WHERE posts.post_id = ?');
         $query->execute([$id]);
-        $post = $query->fetch();
-        return $post;
+        if($query->rowCount() == 1){
+            return $query->fetch();
+        }
+        return null;
     }
 
     public function getPostId(){
@@ -46,6 +48,12 @@ class PostActions extends UserActions{
      } else{
         return false;
      }
-}
+    }
+
+    public function postNotFound($post_id) {
+        if($this->getPostById($post_id) == null){
+            header('location:postNotFound.php');
+        }
+    }
 
 }
