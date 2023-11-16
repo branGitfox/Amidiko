@@ -29,7 +29,7 @@ class PostActions extends UserActions{
 
     public function getPostById($id) {
         $query = Parent::getPdo()
-        ->prepare('SELECT * FROM posts INNER JOIN users ON users.id = posts.post_id WHERE posts.post_id = ?');
+        ->prepare('SELECT * FROM posts WHERE posts.post_id = ?');
         $query->execute([$id]);
         if($query->rowCount() == 1){
             return $query->fetch();
