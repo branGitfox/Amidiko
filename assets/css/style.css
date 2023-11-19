@@ -162,13 +162,14 @@ margin-bottom: 15px;
     height: 56px;
     border-radius: 50%;
     border: solid .4px gray;
-    
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .new-img-container img {
     width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    height: auto;
 }
 
 

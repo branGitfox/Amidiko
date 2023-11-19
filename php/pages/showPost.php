@@ -29,7 +29,7 @@ $post = $posts->getPostById($posts->getPostId());
                     <img src="../php/Admin/post_images/<?=$post['post_img1']?> " alt="">
                 </div>
                 <div class="img2">
-                    <img src="../php/Admin/post_images/<?=$post['post_img2']?>" alt="">
+                    <img src="../php/Admin/post_images2/<?=$post['post_img2']?>" alt="">
                 </div>
             </div>
             <div class="informations">
