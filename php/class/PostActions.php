@@ -3,7 +3,7 @@
 class PostActions extends UserActions{
     private $user_id;
     private $categoryChoice = [
-        'matériel informatique' => 1,
+        'matériel' => 1,
         'vestimentaire' => 2,
         'autres' => 3
     ];
@@ -72,11 +72,18 @@ class PostActions extends UserActions{
         if(isset($_POST['envoyer'])){
             if(isset($_POST['articles'], $_POST['post_desc'], $_POST['post_loc'], $_POST['post_phone'])
             && !empty($_POST['articles']) && !empty($_POST['post_desc']) && !empty($_POST['post_loc']) && !empty($_POST['post_phone'])){
+                if(in_array($this->categoryChoice[$_POST['articles']], $this->categoryChoice)){
 
-                $post_category = $this->categoryChoice[htmlentities(htmlspecialchars($_POST['articles']))];
+                    $post_category = $this->categoryChoice[$_POST['articles']];
+                }else{
+                    header('location:categoryNotfound.php');
+                }
+                if(isset($_FILES['post_img1'], $_FILES['post_img2']))
                 $post_desc = htmlentities(htmlspecialchars($_POST['post_desc']));
                 $post_loc = htmlentities(htmlspecialchars($_POST['post_loc'])); 
                 $post_phone = htmlentities(htmlspecialchars($_POST['post_phone']));
+
+                
                 
 
             }
