@@ -78,10 +78,46 @@ class PostActions extends UserActions{
                 }else{
                     header('location:categoryNotfound.php');
                 }
-                if(isset($_FILES['post_img1'], $_FILES['post_img2']))
+
+                if(isset($_POST['post_whatsapp'], $_POST['post_facebook']) && !empty($_POST['post_whatsapp']) && !empty($_POST['post_facebook'])){
+                    $post_whatsapp= htmlentities(htmlspecialchars($_POST['post_whatsapp']));
+                    $post_facebook= htmlentities(htmlspecialchars($_POST['post_facebook']));
+                }else {
+                    $post_whatsapp = 'Non renseigné';
+                    $post_facebook = 'Non renseigné';
+                }
+
+                
                 $post_desc = htmlentities(htmlspecialchars($_POST['post_desc']));
                 $post_loc = htmlentities(htmlspecialchars($_POST['post_loc'])); 
                 $post_phone = htmlentities(htmlspecialchars($_POST['post_phone']));
+                if(isset($_FILES['post_img1'], $_FILES['post_img2']) && !empty($_FILES['post_img1']) && !empty($_FILES['post_img2'])){
+                    $img1=$_FILES['post_img1'];
+                    $img2= $_FILES['post_img2'];
+                    $img1_name = $img1['name'];
+                    $img1_tmp= $img1['tmp_name'];
+                    $explode_img1= explode('.', $img1_name);
+                    $img1_ext = end($explode_img1);
+                    //image 2
+                    $img2_name = $img2['name'];
+                    $img2_tmp= $img2['tmp_name'];
+                    $explode_img2= explode('.', $img2_name);
+                    $img2_ext = end($explode_img2);
+                    $new_img1_name= time().'.'.$img1_ext;
+                    $new_img2_name= time().'.'.$img2_ext;
+                    $allowed_ext = ['jpg', 'png', 'gif'];
+                    
+                    if(in_array(strtolower($img1_ext), $allowed_ext)){
+                        move_uploaded_file($img1_tmp, '../Admin/post_images/'.$new_img1_name);
+                        if(in_array(strtolower($img2_ext), $allowed_ext)){ 
+                            move_uploaded_file($img2_tmp, '../Admin/post_images2/'.$new_img2_name);
+                            $this->newPost($post_category, $post_desc, $post_loc, $post_phone, $new_img1_name, $new_img2_name, $post_whatsapp, $post_facebook, Parent::currentUserId());
+                        }
+                    }
+
+                    
+
+                }
 
                 
                 
@@ -90,8 +126,9 @@ class PostActions extends UserActions{
         }
     }
 
-    public function newPost($category_id, $post_desc, $post_loc, $post_phone, $post_img1, $post_img2, $post_whatsapp, $post_facebook){
-
+    public function newPost($category_id, $post_desc, $post_loc, $post_phone, $post_img1, $post_img2, $post_whatsapp, $post_facebook, $post_user_id){
+       $query= Parent::getPdo()->prepare('INSERT INTO posts (`category_id`,`post_desc`,`post_loc`,`post_phone`, `post_img1`, `post_img2`, `post_whatsapp`, `post_facebook`, `user_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+       $query->execute([$category_id, $post_desc, $post_loc, $post_phone, $post_img1, $post_img2, $post_whatsapp, $post_facebook, $post_user_id]);
     }
     
 

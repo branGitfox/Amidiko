@@ -59,7 +59,14 @@ header a {
     grid-template-rows: auto auto;
     gap: 10px;
     border: none;
+
 }
+
+.imgs-container  > div {
+    
+   overflow-y: hidden;
+}
+
 
 .informations{
     width: 500px;

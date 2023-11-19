@@ -144,7 +144,7 @@ public function test()
 
     }
 
-    public function sessionUser($user_id,$user_name, $user_firstname, $user_email, $user_password, $user_image){
+    private function sessionUser($user_id,$user_name, $user_firstname, $user_email, $user_password, $user_image){
         if(session_status() == PHP_SESSION_NONE){
             session_start();
             $_SESSION['user']=[
@@ -156,6 +156,11 @@ public function test()
                 'user_image' => $user_image
             ];
         }
+    }
+
+
+    public function currentUserId(){
+        return $_SESSION['user']['user_id'];
     }
 
     public function getUseImageprofil($id){

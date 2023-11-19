@@ -30,7 +30,7 @@ $userImage = $user->getUseImageprofil($_SESSION['user']['user_id']);
                 <a href=""><img src="./php/Admin/user_images/<?= $userImage['user_image']?>" alt=""></a>   
             </div>
         </nav>
-        <form method="post" enctype="mulitpart/form-data">
+        <form method="post" enctype="multipart/form-data">
             <label for="category">Quel genre d'article vous voulez vendre?</label>
             <select name="articles" id="category">
                 <?php foreach($category->listOfCategory() as $category):?>
