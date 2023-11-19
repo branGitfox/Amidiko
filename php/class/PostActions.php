@@ -56,10 +56,23 @@ class PostActions extends UserActions{
         }
     }
 
-    public function newPost() {
-        
+    public function listOfCategory() {
+        $query = Parent::getPdo()
+        ->query('SELECT categorie_name FROM category');
+        $query->execute();
+        return $query->fetchAll();
     }
 
+    public function checkNewFormPost(){
+        if(isset($_POST['envoyer'])){
+            if(isset($_POST['articles'], $_POST['post_desc'], $_POST['post_loc'], $_POST['post_phone'])
+            && !empty($_POST['articles']) && !empty($_POST['post_desc']))
+        }
+    }
+
+    public function newPost($category_id, $post_desc, $post_loc, $post_phone, $post_img1, $post_img2, $post_whatsapp, $post_facebook){
+
+    }
     
 
 }
