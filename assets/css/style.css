@@ -162,6 +162,7 @@ margin-bottom: 15px;
     height: 56px;
     border-radius: 50%;
     border: solid .4px gray;
+    
 }
 
 .new-img-container img {
@@ -191,12 +192,12 @@ margin-bottom: 15px;
     width: 100%;
     border-bottom: solid .3px gray;
     height: calc(100% - 100px);
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .post-body img {
     width: 100%;
-    height: 200px;
+    height: auto;
     border:none
 }
 

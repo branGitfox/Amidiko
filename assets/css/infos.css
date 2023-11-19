@@ -63,7 +63,6 @@ header a {
 }
 
 .imgs-container  > div {
-    
    overflow-y: hidden;
 }
 
@@ -90,7 +89,7 @@ header a {
 
 .imgs-container > div img {
     width: 100%;
-    height:100%;
+    height:auto;
     border-radius: 5px;
 }
 
