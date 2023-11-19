@@ -5,11 +5,7 @@ session_start();
 $user = new UserActions();
 $category = new PostActions();
 $userImage = $user->getUseImageprofil($_SESSION['user']['user_id']);
-$categoryChoice = [
-    'matériel informatique' => 1,
-    'vestimentaire' => 2,
-    'autres' => 3
-];
+
 
 
 ?>
@@ -42,15 +38,15 @@ $categoryChoice = [
                     <?php endforeach ?>
             </select>
             <label for="informations">Description de votre article (prix, taille, stockage, etc)</label>
-            <textarea name="post_desc" id="informations" cols="30" rows="10"></textarea>
+            <textarea name="post_desc" id="informations" cols="30" rows="10" required></textarea>
             <label for="localisation">localisation</label>
-            <input type="text" id="localisation" placeholder="Entrez votre Ville ou votre Adresse..." name="post_loc">
+            <input type="text" id="localisation" placeholder="Entrez votre Ville ou votre Adresse..." name="post_loc" required>
             <label for="phone">Telephone</label>
-            <input type="text" id="phone" placeholder="Entrez votre Numero ou vos Numero en separant par / " name="post_phone">
+            <input type="text" id="phone" placeholder="Entrez votre Numero ou vos Numero en separant par / " name="post_phone" required>
             <label for="img1">Image 1</label>
-            <input type="file" id="img1" name="post_img1">
+            <input type="file" id="img1" name="post_img1" required>
             <label for="img2">Image 2</label>
-            <input type="file" id="img2" name="post_img2">
+            <input type="file" id="img2" name="post_img2" required>
             <h2 class="Facultatif">Facultatif</h2>
             <label for="whatsapp">Numero Whatsapp</label>
             <input type="text" name="post_whatsapp" id="whatsapp" placeholder="Entrez le Numero de votre compte Whatsapp...">

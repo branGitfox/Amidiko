@@ -2,6 +2,11 @@
 
 class PostActions extends UserActions{
     private $user_id;
+    private $categoryChoice = [
+        'matériel informatique' => 1,
+        'vestimentaire' => 2,
+        'autres' => 3
+    ];
     public function __construct($user_id=null) {
         $this->user_id = $user_id;
     }
@@ -66,7 +71,15 @@ class PostActions extends UserActions{
     public function checkNewFormPost(){
         if(isset($_POST['envoyer'])){
             if(isset($_POST['articles'], $_POST['post_desc'], $_POST['post_loc'], $_POST['post_phone'])
-            && !empty($_POST['articles']) && !empty($_POST['post_desc']))
+            && !empty($_POST['articles']) && !empty($_POST['post_desc']) && !empty($_POST['post_loc']) && !empty($_POST['post_phone'])){
+
+                $post_category = $this->categoryChoice[htmlentities(htmlspecialchars($_POST['articles']))];
+                $post_desc = htmlentities(htmlspecialchars($_POST['post_desc']));
+                $post_loc = htmlentities(htmlspecialchars($_POST['post_loc'])); 
+                $post_phone = htmlentities(htmlspecialchars($_POST['post_phone']));
+                
+
+            }
         }
     }
 
