@@ -193,7 +193,7 @@ margin-bottom: 15px;
     width: 100%;
     border-bottom: solid .3px gray;
     height: calc(100% - 100px);
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 .post-body img {

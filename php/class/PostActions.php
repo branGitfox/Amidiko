@@ -130,6 +130,17 @@ class PostActions extends UserActions{
        $query= Parent::getPdo()->prepare('INSERT INTO posts (`category_id`,`post_desc`,`post_loc`,`post_phone`, `post_img1`, `post_img2`, `post_whatsapp`, `post_facebook`, `user_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
        $query->execute([$category_id, $post_desc, $post_loc, $post_phone, $post_img1, $post_img2, $post_whatsapp, $post_facebook, $post_user_id]);
     }
+
+    public function showMorePost() {
+        $query = Parent::getPdo()
+        ->prepare('SELECT * FROM posts INNER JOIN users ON posts.user_id = users.id ORDER BY posts.post_id DESC');
+        $query->execute();
+        $data = $query->fetchAll();
+        return  $data;
+    }
+
+
+   
     
 
 }
