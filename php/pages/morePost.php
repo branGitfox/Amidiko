@@ -4,13 +4,14 @@ require '../class/UserActions.php';
 require '../class/PostActions.php';
 $userProfil = new UserActions();
 $posts = new PostActions();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/voirs.css">
+    <link rel="stylesheet" href="<?=$posts->dot()?>/assets/css/voirs.css">
     <title>Voirs</title>
 </head>
 <body>
@@ -21,16 +22,16 @@ $posts = new PostActions();
               </svg></a></div>
             <h2>Amidiko</h2>
             <div class="profil-container">
-                <a href=""><img src="./php/Admin/user_images/<?=$userProfil->getUseImageprofil($_SESSION['user']['user_id'])['user_image']?>" alt=""></a>
+                <a href=""><img src="<?=$posts->dot()?>/php/Admin/user_images/<?=$userProfil->getUseImageprofil($_SESSION['user']['user_id'])['user_image']?>" alt=""></a>
             </div>
         </nav>
         <div class="filtres">
             <h2>Filtres</h2>
             <div class="filtres-container">
                 <a href="morePost" class="filtre-link active">Tous</a>
-                <a href="morePost/informatique" class="filtre-link">Materiel Informatiques</a>
-                <a href="morePost/Vestimentaires" class="filtre-link">Vestimentaires</a>
-                <a href="morePost/autres" class="filtre-link">Autres</a>
+                <a href="morePost.php?filter=informatiques" class="filtre-link">Materiel Informatiques</a>
+                <a href="morePost.php?filter=vestimentaires" class="filtre-link">Vestimentaires</a>
+                <a href="morePost.php?filter=autres" class="filtre-link">Autres</a>
             </div>
         </div>
                 <!-- section nouveauté -->
@@ -42,7 +43,7 @@ $posts = new PostActions();
                             <div class="post-header">
                                 <div class="profil">
                                     <div class="new-img-container">
-                                        <img src="./php/Admin/user_images/<?=$post['user_image']?>" loading="lazy">
+                                        <img src="<?=$posts->dot()?>/php/Admin/user_images/<?=$post['user_image']?>" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="profil-info">
@@ -55,7 +56,7 @@ $posts = new PostActions();
                                 </div>
                             </div>
                             <div class="post-body">
-                                <img src="./php/Admin/post_images/<?=$post['post_img1']?>" alt="">
+                                <img src="<?=$posts->dot()?>/php/Admin/post_images/<?=$post['post_img1']?>" alt="">
                             </div>
                             <div class="post-footer">
                                 <div class="btn-info">
@@ -72,6 +73,6 @@ $posts = new PostActions();
                     </div>
                 </section>
     </div>
-    <script src="./assets/js/voir.js"></script>
+    <script src="<?=$posts->dot()?>/assets/js/voir.js"></script>
 </body>
 </html>

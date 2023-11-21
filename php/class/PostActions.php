@@ -140,6 +140,28 @@ class PostActions extends UserActions{
     }
 
 
+    private function getFilter() {
+        if(isset($_GET['filter']) && !empty($_GET['filter'])){
+            $filter = htmlentities(htmlspecialchars($_GET['filter']));
+        }
+
+        return $filter;
+    }
+
+    public function dot() {
+        if($this->getFilter() != null){
+            $dot = '..';
+        }else {
+            $dot = '.';
+        }
+
+        return $dot;
+    }
+    
+
+
+
+
    
     
 
