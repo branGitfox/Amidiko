@@ -21,16 +21,16 @@ $posts = new PostActions();
               </svg></a></div>
             <h2>Amidiko</h2>
             <div class="profil-container">
-                <a href=""><img src="../../../assets/img/55704192-avatar-profil-homme-icône.jpg" alt=""></a>
+                <a href=""><img src="./php/Admin/user_images/<?=$userProfil->getUseImageprofil($_SESSION['user']['user_id'])['user_image']?>" alt=""></a>
             </div>
         </nav>
         <div class="filtres">
             <h2>Filtres</h2>
             <div class="filtres-container">
-                <a href="#" class="filtre-link active">Tous</a>
-                <a href="#" class="filtre-link">Materiel Informatiques</a>
-                <a href="#" class="filtre-link">Vestimentaires</a>
-                <a href="#" class="filtre-link">Autres</a>
+                <a href="morePost" class="filtre-link active">Tous</a>
+                <a href="morePost/informatique" class="filtre-link">Materiel Informatiques</a>
+                <a href="morePost/Vestimentaires" class="filtre-link">Vestimentaires</a>
+                <a href="morePost/autres" class="filtre-link">Autres</a>
             </div>
         </div>
                 <!-- section nouveauté -->
