@@ -107,7 +107,7 @@ $post = new PostActions($user_id);
                 <?php endforeach ;?>
             </div>   
             <div class="btn-more">
-                <a href="morePost">Voir Plus</a>
+                <a href="php/pages/morePost.php">Voir Plus</a>
             </div>
         </section>
 

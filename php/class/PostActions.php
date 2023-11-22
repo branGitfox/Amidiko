@@ -4,7 +4,7 @@ class PostActions extends UserActions{
     private $user_id;
     private $categoryChoice = [
         'matériel' => 1,
-        'vestimentaire' => 2,
+        'vestimentaires' => 2,
         'autres' => 3
     ];
     public function __construct($user_id=null) {
@@ -132,37 +132,43 @@ class PostActions extends UserActions{
     }
 
     public function showMorePost() {
+        if($this->getFilter() != null){
+            
+            $req = "SELECT * FROM posts INNER JOIN users ON posts.user_id = users.id WHERE posts.category_id = ".$this->category();
+        }else {
+            $req='SELECT * FROM posts INNER JOIN users ON posts.user_id = users.id ORDER BY posts.post_id DESC';
+        }
+        
+
         $query = Parent::getPdo()
-        ->prepare('SELECT * FROM posts INNER JOIN users ON posts.user_id = users.id ORDER BY posts.post_id DESC');
+        ->prepare($req);
         $query->execute();
         $data = $query->fetchAll();
         return  $data;
     }
 
 
-    private function getFilter() {
+    public function getFilter() {
         if(isset($_GET['filter']) && !empty($_GET['filter'])){
-            $filter = htmlentities(htmlspecialchars($_GET['filter']));
+            $filter = $_GET['filter'];
+        }else{
+            $filter = null;
         }
 
         return $filter;
     }
 
-    public function dot() {
-        if($this->getFilter() != null){
-            $dot = '..';
-        }else {
-            $dot = '.';
-        }
+    
 
-        return $dot;
+    public function category () {
+        return $this->categoryChoice[$this->getFilter()];
     }
+
     
 
 
 
 
-   
+   }
     
 
-}
