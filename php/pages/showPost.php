@@ -1,6 +1,10 @@
 <?php  
+session_start();
 require '../class/UserActions.php';
 require '../class/PostActions.php';
+require '../class/Security.php';
+$secu = new Security('logIn');
+$secu->security();
 $posts = new PostActions();
 $posts->postNotFound($posts->getPostId());
 $post = $posts->getPostById($posts->getPostId());

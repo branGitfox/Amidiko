@@ -1,7 +1,10 @@
 <?php 
+session_start();
 require '../class/UserActions.php';
 require '../class/PostActions.php';
-session_start();
+require '../class/Security.php';
+$secu = new Security('logIn');
+$secu->security();
 $user = new UserActions();
 $category = new PostActions();
 $userImage = $user->getUseImageprofil($_SESSION['user']['user_id']);

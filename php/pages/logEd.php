@@ -1,8 +1,10 @@
 <?php 
+session_start();
 require '../class/UserActions.php';
 require '../class/POstActions.php';
-
-session_start();
+require '../class/Security.php';
+$secu = new Security('logIn');
+$secu->security();
 $user_firstname = $_SESSION['user']['user_firstname'];
 $user_id = $_SESSION['user']['user_id'];
 $post = new PostActions($user_id);
@@ -92,7 +94,7 @@ $post = new PostActions($user_id);
                     </div>
                     <div class="post-footer">
                         <div class="btn-info">
-                            <a href="showPost/<?=$post['post_id']?>">Infos</a>
+                            <a href="./showPost/<?=$post['post_id']?>">Infos</a>
                         </div>
                         <div class="likes">
                             <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

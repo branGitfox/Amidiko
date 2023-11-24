@@ -2,11 +2,11 @@
 session_start();
 require '../class/UserActions.php';
 require '../class/PostActions.php';
+require '../class/Security.php';
+$secu = new Security('../../logIn');
+$secu->security();
 $userProfil = new UserActions();
 $posts = new PostActions();
-echo '<pre>';
-var_dump($_SERVER);
-echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
