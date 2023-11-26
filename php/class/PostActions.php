@@ -160,8 +160,64 @@ class PostActions extends UserActions{
 
     
 
-    public function category () {
+    private function category () {
         return $this->categoryChoice[$this->getFilter()];
+    }
+
+    public function likePost() {
+
+    }
+
+    public function getLikeStatus() {
+        $query=Parent::getPdo()
+        ->prepare('SELECT post_id FROM likes WHERE post_id = ? AND user_liked_it = ?');
+        $query->execute([$this->getPostId(), Parent::currentUserId()]);  
+        if($query->rowCount() > 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
+    public function likeActions() {
+        if($this->getLikeStatus() == true) {
+            $dislike=Parent::getPdo()
+            ->prepare('DELETE FROM likes WHERE post_id = ?');
+            $dislike->execute([$this->getPostId()]);
+            $this->decrementLike();
+            // header('location:./showPost/'.$this->getPostId());
+            
+        }else {
+            $like = Parent::getPdo()
+            ->prepare('INSERT INTO likes (`post_id`, `user_liked_it`) VALUES (?, ?)');
+            $like->execute([$this->getPostId(), Parent::currentUserId()]);
+            $this->incrementLike();
+            // header('location:./showPost/'.$this->getPostId());
+        }
+    }
+
+
+    private function incrementLike() {
+        $query = Parent::getPdo()
+        ->prepare('SELECT post_likes FROM posts WHERE post_id =?');
+        $query->execute([$this->getPostId()]);
+        $likes = $query->fetch();
+        $increment = $likes['post_likes'] + 1;
+       $newLikes= Parent::getPdo()
+        ->prepare('UPDATE posts SET post_likes = ? WHERE post_id = ?');
+        $newLikes->execute([$increment, $this->getPostId()]);
+    }
+
+    private function decrementLike() {
+        $query = Parent::getPdo()
+        ->prepare('SELECT post_likes FROM posts WHERE post_id =?');
+        $query->execute([$this->getPostId()]);
+        $likes = $query->fetch();
+        $decrement = $likes['post_likes'] - 1;
+       $newLikes= Parent::getPdo()
+        ->prepare('UPDATE posts SET post_likes = ? WHERE post_id = ?');
+        $newLikes->execute([$decrement, $this->getPostId()]);
     }
 
     

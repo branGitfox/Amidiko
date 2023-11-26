@@ -8,6 +8,7 @@ $secu->security();
 $user_firstname = $_SESSION['user']['user_firstname'];
 $user_id = $_SESSION['user']['user_id'];
 $post = new PostActions($user_id);
+$_SESSION['url'] = '../logEd';
 
 
 ?>

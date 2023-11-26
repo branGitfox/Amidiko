@@ -7,6 +7,7 @@ $secu = new Security('../../logIn');
 $secu->security();
 $userProfil = new UserActions();
 $posts = new PostActions();
+$_SESSION['url'] = '../php/pages/morePost.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +64,7 @@ $posts = new PostActions();
                             </div>
                             <div class="post-footer">
                                 <div class="btn-info">
-                                    <a href="showPost/<?=$post['post_id']?>">Infos</a>
+                                    <a href="../../showPost/<?=$post['post_id']?>">Infos</a>
                                 </div>
                                 <div class="likes">
                                     <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
