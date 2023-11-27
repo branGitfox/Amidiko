@@ -9,8 +9,6 @@ $user_firstname = $_SESSION['user']['user_firstname'];
 $user_id = $_SESSION['user']['user_id'];
 $post = new PostActions($user_id);
 $_SESSION['url'] = '../logEd';
-
-
 ?>
 
 
@@ -49,7 +47,7 @@ $_SESSION['url'] = '../logEd';
         <div class="hide-menu">
             <a href="newPost">Vendre</a>
             <a href="">Annonces</a>
-            <a href="">Emplois</a>
+            <a href="newJob">Emplois</a>
             <a href=""><?= $user_firstname ?></a>
             <svg class="close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-x-lg" viewBox="0 0 16 16">
