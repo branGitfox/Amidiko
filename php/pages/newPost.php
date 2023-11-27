@@ -34,6 +34,10 @@ $userImage = $user->getUseImageprofil($_SESSION['user']['user_id']);
             </div>
         </nav>
         <form method="post" enctype="multipart/form-data">
+            <?php if(!empty($category->success())):?>
+            <div class="error"><?= $category->success()?></div>
+            <?php endif?>
+                
             <label for="category">Quel genre d'article vous voulez vendre?</label>
             <select name="articles" id="category">
                 <?php foreach($category->listOfCategory() as $category):?>

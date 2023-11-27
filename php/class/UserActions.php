@@ -4,7 +4,7 @@ class UserActions {
     private $host= '127.0.0.1';
     private $dbname = 'amidiko';
     private $user = 'root';
-    private $error;
+    protected $error;
     private $success;
     private $pdo;
 
@@ -26,7 +26,7 @@ class UserActions {
         return $this->pdo;
     }
 
-    private function getError($error) {
+    protected function getError($error) {
         $this->error = $error;  
     }
 
