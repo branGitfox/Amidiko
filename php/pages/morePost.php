@@ -34,7 +34,7 @@ $_SESSION['url'] = '../php/pages/morePost.php';
             <div class="filtres-container">
                 <a href="morePost.php" class="filtre-link <?php if($posts->getFilter() == null){echo 'active';}?>">Tous</a>
                 <a href="morePost.php?filter=matériel " class="filtre-link <?php if($posts->getFilter() == 'matériel'){echo 'active';}?>">Materiel Informatiques</a>
-                <a href="morePost.php?filter=vestimentaire" class="filtre-link <?php if($posts->getFilter() == 'vestimentaires'){echo 'active';}?>">Vestimentaires</a>
+                <a href="morePost.php?filter=vestimentaire" class="filtre-link <?php if($posts->getFilter() == 'vestimentaire'){echo 'active';}?>">Vestimentaires</a>
                 <a href="morePost.php?filter=autres" class="filtre-link <?php if($posts->getFilter() == 'autres'){echo 'active';}?>">Autres</a>
             </div>
         </div>

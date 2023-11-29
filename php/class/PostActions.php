@@ -28,7 +28,9 @@ class PostActions extends UserActions
         return $post;
     }
 
-
+/**
+ * 
+ */
     public function getLastRandomPost()
     {
         $query = parent::getPdo()
