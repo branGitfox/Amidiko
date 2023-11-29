@@ -8,4 +8,5 @@ RewriteRule ^showPost/([0-9]+) ./php/pages/showPost.php?post_id=$1
 RewriteRule ^showPost/([a-z]+) ./php/pages/postNotFound.php
 RewriteRule ^newPost?$ ./php/pages/newPost.php
 RewriteRule ^newJobs?$ ./php/pages/newJobs.php
+RewriteRule ^newPub?$ ./php/pages/newPub.php
 

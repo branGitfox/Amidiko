@@ -32,7 +32,7 @@ $_SESSION['url'] = '../logEd';
             </div>
             <div class="nav-links">
                 <a href="newPost">Vendre</a>
-                <a href="">Annonces</a>
+                <a href="newPub">Annonces</a>
                 <a href="">Emplois</a>
                 <a href=""><?= $user_firstname ?></a>
             </div>
@@ -46,7 +46,7 @@ $_SESSION['url'] = '../logEd';
         <!-- MENU TOGGLE -->
         <div class="hide-menu">
             <a href="newPost">Vendre</a>
-            <a href="">Annonces</a>
+            <a href="newPub">Annonces</a>
             <a href="newJob">Emplois</a>
             <a href=""><?= $user_firstname ?></a>
             <svg class="close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
