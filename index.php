@@ -2,8 +2,9 @@
 
 require './php/class/UserActions.php';
 require './php/class/PostActions.php';
-
+require './php/class/PubActions.php';
 $post = new PostActions();
+$pubs = new PubActions();
 
 ?>
 <!DOCTYPE html>
@@ -122,28 +123,19 @@ $post = new PostActions();
         <section class="annonces">
             <h2>Annonces</h2>
             <div class="new-container">
+            <?php foreach($pubs->showPub() as $pub):?>
                 <div class="post-container post-annonce">
                     <div class="post-date">
-                        <p>17/01/2004</p>
+                        <p><?=$pub['pub_date']?></p>
                     </div>
                     <div class="post-text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deserunt quae! Ullam eius,
-                            molestiae hic aut officia distinctio possimus eveniet quibusdam, a ipsa praesentium
-                            architecto totam quo accusamus fuga nulla.
-                            Quo, ullam architecto? Quasi modi facilis incidunt dolor natus placeat magni, vitae beatae
-                            nostrum voluptatem impedit quisquam possimus obcaecati nihil necessitatibus consequatur
-                            temporibus laudantium ratione. Fugiat, architecto. Laudantium, corrupti ullam.
-                            Doloremque a molestias nesciunt fuga labore nihil asperiores tenetur sapiente explicabo
-                            eveniet temporibus, earum architecto vel minima ipsum in laboriosam natus laborum dolorem
-                            unde ut vero sint, et dolorum? Voluptatem?
-                            Est eligendi mollitia odit, officia beatae, amet sunt corporis ut rerum aspernatur placeat
-                            voluptate ullam, neque unde reprehenderit sit! Id, recusandae? Totam quod quam laudantium
-                            debitis possimus ullam rerum laboriosam!</p>
+                        <p><?=$pub['pub_desc']?></p>
                     </div>
                     <div class="btn-read">
-                        <a href="#">Lire</a>
+                        <a href="<?=$pub['id']?>">Lire</a>
                     </div>
                 </div>
+                <?php endforeach ?>
 
             </div>
         </section>
