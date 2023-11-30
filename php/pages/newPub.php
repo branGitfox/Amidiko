@@ -32,7 +32,7 @@ $pubs->checkPubForm();
                 <div class="error"><?= $pubs->success()?></div>
                 <?php endif ?>
             <label for="informations">Ecrire votre annonce ici</label>
-            <textarea name="pub_desc" id="informations" cols="30" rows="10" placeholder="tapez votre texte ici"></textarea>
+            <textarea name="pub_desc" id="informations" cols="30" rows="10" placeholder="tapez votre texte ici" required></textarea>
             <input type="submit" value="annoncer" id="vendre" name="envoyer">
     </div>
     <script src="./assets/js/annonce.js"></script>
