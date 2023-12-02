@@ -81,7 +81,7 @@ class UserActions {
                  $this->signIN($user_name, $user_firstname, $user_email, $user_password,$user_sexe ,$new_image_name );   
              }
 
-             $new_image_name = 'homme.png';
+             $new_image_name = 'homme.jpg';
              $this->signIN($user_name, $user_firstname, $user_email, $user_password,$user_sexe ,$new_image_name);  
 
 

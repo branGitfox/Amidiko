@@ -3,8 +3,11 @@ session_start();
 require '../class/UserActions.php';
 require '../class/PostActions.php';
 require '../class/PubActions.php';
+require '../class/Security.php';
 $userProfil = new UserActions();
 $pubs = new PubActions();
+$security = new Security('logIn');
+$security->security();
 $pubs->checkPubForm();
 ?>
 

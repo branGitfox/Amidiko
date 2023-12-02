@@ -2,6 +2,9 @@
 session_start();
 require '../class/UserActions.php';
 require '../class/PostActions.php';
+require '../class/Security.php';
+$security = new Security('logIn');
+$security->security();
 $userImageProfil = new UserActions();
 ?>
 <!DOCTYPE html>
