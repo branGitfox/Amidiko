@@ -34,7 +34,7 @@ class PostActions extends UserActions
     public function getLastRandomPost()
     {
         $query = parent::getPdo()
-            ->prepare('SELECT * FROM posts INNER JOIN users ON users.id = posts.user_id ORDER BY posts.post_id DESC LIMIT 3');
+        ->prepare('SELECT * FROM posts INNER JOIN users ON users.id = posts.user_id ORDER BY posts.post_id DESC LIMIT 3');
         $query->execute();
         $data = $query->fetchAll();
         return $data;

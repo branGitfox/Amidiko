@@ -10,3 +10,12 @@ if(themeCode % 2 != 0){
     body.style.backgroundColor = 'white'
     body.style.color = 'black'
 }
+
+window.addEventListener('scroll', () => {
+    localStorage.setItem('scrollPositionInfos', scrollY)
+})
+
+
+window.addEventListener('load', () => {
+    scrollTo(0, localStorage.getItem('scrollPositionInfos'))
+})

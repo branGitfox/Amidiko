@@ -20,7 +20,7 @@ class PubActions extends UserActions {
 
     public function showPub() {
         $query = Parent::getPdo()
-        ->prepare("SELECT * FROM pubs ORDER BY id DESC LIMIT 2");
+        ->prepare("SELECT * FROM pubs ORDER BY id DESC LIMIT 3");
         $query->execute();
         return $query->fetchAll();
     }

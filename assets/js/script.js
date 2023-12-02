@@ -61,3 +61,12 @@ if (themeCode % 2 != 0) {
   hideMenuDark.classList.remove("hide-menu-dark");
   hideMenuDark.classList.remove("show-menu-dark");
 }
+
+window.addEventListener('scroll', () => {
+  localStorage.setItem('scrollPositionLoged', scrollY)
+})
+
+
+window.addEventListener('load', () => {
+  scrollTo(0, localStorage.getItem('scrollPositionLoged'))
+})
