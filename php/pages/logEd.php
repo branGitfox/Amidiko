@@ -127,7 +127,7 @@ $pubs = new PubActions();
                         <p><?=$pub['pub_desc']?></p>
                     </div>
                     <div class="btn-read">
-                        <a href="<?=$pub['id']?>">Lire</a>
+                        <a href="./php/pages/showPub.php?pub_id=<?=$pub['id']?>">Lire</a>
                     </div>
                 </div>
                 <?php endforeach ?>

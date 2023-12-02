@@ -25,6 +25,20 @@ class PubActions extends UserActions {
         return $query->fetchAll();
     }
 
+
+    public function showPubById($id) {
+        $query= parent::getPdo()->prepare('SELECT * FROM pubs INNER JOIN users ON users.id = pubs.user_id WHERE pubs.id = ?');
+        $query->execute([$id]);
+        return $query->fetch();
+    }
+
+
+    public function getPubId() {
+        if(isset($_GET['pub_id']) && !empty($_GET['pub_id'])){
+            return $_GET['pub_id'];
+        }
+    }
+
     public function getSuccess($success){
         $this->success = $success;
     }
