@@ -82,10 +82,15 @@ header a {
     /* overflow: hidden;  */
     border-radius: 5px;
     border: solid .1px rgb(182, 182, 182);
+
  
 }
 
-
+.imgs-container> div{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
 
 .imgs-container > div img {
     width: 100%;
