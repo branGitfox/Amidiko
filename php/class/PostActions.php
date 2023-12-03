@@ -8,6 +8,10 @@ class PostActions extends UserActions
         'vestimentaire' => 2,
         'autres' => 3
     ];
+
+    /**
+     * Constructeur le la class __CLASS__
+     */
     public function __construct($user_id = null)
     {
         $this->user_id = $user_id;
@@ -16,7 +20,7 @@ class PostActions extends UserActions
     private $success;
 
     /**
-     * return last (3) posts
+     * return last (3) posts which not owned by the current user
      */
 
     public function getLastPost()
@@ -29,7 +33,7 @@ class PostActions extends UserActions
     }
 
 /**
- * 
+ * return last (3) random post
  */
     public function getLastRandomPost()
     {
@@ -39,7 +43,9 @@ class PostActions extends UserActions
         $data = $query->fetchAll();
         return $data;
     }
-
+/**
+ * return one post by his ID
+ */
     public function getPostById($id)
     {
         $query = parent::getPdo()
@@ -50,6 +56,10 @@ class PostActions extends UserActions
         }
         return null;
     }
+
+    /**
+     * return post ID
+     */
 
     public function getPostId()
     {
@@ -64,14 +74,18 @@ class PostActions extends UserActions
             return false;
         }
     }
-
+/**
+ * renvoi dans la page d'erreur si l'id du post n'existe pas
+ */
     public function postNotFound($post_id)
     {
         if ($this->getPostById($post_id) == null) {
             header('location:postNotFound.php');
         }
     }
-
+/**
+ * Return list of category
+ */
     public function listOfCategory()
     {
         $query = parent::getPdo()
@@ -79,7 +93,10 @@ class PostActions extends UserActions
         $query->execute();
         return $query->fetchAll();
     }
-
+/**
+ * 
+ * Gere la creatin d'un nouveau post
+ */
     public function checkNewFormPost()
     {
         if (isset($_POST['envoyer'])) {
@@ -141,13 +158,17 @@ class PostActions extends UserActions
             }
         }
     }
-
+/**
+ * Ajoute le nouveau post dans la base de donnée
+ */
     public function newPost($category_id, $post_desc, $post_loc, $post_phone, $post_img1, $post_img2, $post_whatsapp, $post_facebook, $post_user_id)
     {
         $query = parent::getPdo()->prepare('INSERT INTO posts (`category_id`,`post_desc`,`post_loc`,`post_phone`, `post_img1`, `post_img2`, `post_whatsapp`, `post_facebook`, `user_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
         $query->execute([$category_id, $post_desc, $post_loc, $post_phone, $post_img1, $post_img2, $post_whatsapp, $post_facebook, $post_user_id]);
     }
-
+/**
+ * Affiche tous les posts par rapport au filtres voulue
+ */
     public function showMorePost()
     {
         if ($this->getFilter() != null) {
@@ -165,7 +186,9 @@ class PostActions extends UserActions
         return $data;
     }
 
-
+/**
+ * Capture les filtres
+ */
     public function getFilter()
     {
         if (isset($_GET['filter']) && !empty($_GET['filter'])) {
@@ -178,17 +201,18 @@ class PostActions extends UserActions
     }
 
 
-
+/**
+ * retourne le filtrs voulue par l'utilisateur connecté
+ */
     private function category()
     {
         return $this->categoryChoice[$this->getFilter()];
     }
 
-    public function likePost()
-    {
 
-    }
-
+/**
+ * retourne true si lùutilisateur a deja liker le post false sinon
+ */
     public function getLikeStatus()
     {
         $query = parent::getPdo()
@@ -201,7 +225,9 @@ class PostActions extends UserActions
         }
     }
 
-
+/**
+ * Decide s'il faut decrementer ou incrementer le nombre de like dans base de deonnée
+ */
     public function likeActions()
     {
         if ($this->getLikeStatus() == true) {
@@ -220,7 +246,9 @@ class PostActions extends UserActions
         }
     }
 
-
+/**
+ * Incremente le nombre de like dans la base de donnée
+ */
     private function incrementLike()
     {
         $query = parent::getPdo()
@@ -232,7 +260,9 @@ class PostActions extends UserActions
             ->prepare('UPDATE posts SET post_likes = ? WHERE post_id = ?');
         $newLikes->execute([$increment, $this->getPostId()]);
     }
-
+/**
+ * decremente le nombre de like dans la base de donnée
+ */
     private function decrementLike()
     {
         $query = parent::getPdo()

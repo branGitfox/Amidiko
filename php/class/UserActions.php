@@ -8,7 +8,10 @@ class UserActions {
     private $success;
     private $pdo;
 
-
+/**
+ * Connection à la base de donnée
+ * return Pdo
+ */
     private function connect() {
         try{
 
@@ -18,6 +21,10 @@ class UserActions {
         }
     }
 
+    /**
+     * connection à la base de donnée
+     * return design pattern (Singleton)
+     */
     public function  getPdo() {
         if($this->pdo == null){
             $this->pdo = $this->connect();
@@ -25,24 +32,36 @@ class UserActions {
 
         return $this->pdo;
     }
-
+/**
+ * getteurs de l'erreur
+ */
     protected function getError($error) {
         $this->error = $error;  
     }
 
+/**
+ * getteurs des succès
+ */
     private function getSuccess($success) {
         $this->success = $success;  
     }
 
-
+/**
+ * retourne les erreurs
+ */
     public function error() {
         return $this->error;
     }
-
+/**
+ * retourne les succès
+ */
     public function success() {
         return $this->success;
     }
 
+    /**
+     * Gere l'inscription de l'utilisateur
+     */
     public function checkForm() {
         if(isset($_POST['envoyer'])){
             if(isset($_POST['user_name'],
@@ -91,18 +110,10 @@ class UserActions {
     }
 }
 
-public function test() 
-{
-    if(isset($_POST['envoyer'])){
-        
-        if(isset($_POST['user_email'], $_POST['user_password'] )){
-           echo $_POST['user_email'];
-        }
-      }
- } 
-
-
-    private function signIn($user_name, $user_firstname, $user_email, $user_password,$user_sexe, $user_image ){
+/**
+ * Ajoute les informations du nouveau utilisateur dans la base de donnée
+ */
+    private function signIn($user_name, $user_firstname, $user_email, $user_password,$user_sexe, $user_image){
         $query = $this->getPdo()->prepare('SELECT *  FROM  users WHERE user_email = ?');
         $query->execute([$user_email]);
         if($query->rowCount() > 0){
@@ -115,6 +126,9 @@ public function test()
         }
     }
 
+    /**
+     * gere la connexion de l'utilisateur existant(e)
+     */
     public function checkUser() {
         if(isset($_POST['envoyer'])){
             if(isset($_POST['user_email'], $_POST['user_password']) 
@@ -126,7 +140,9 @@ public function test()
             }
         }
     }
-
+/**
+ * Verifie si l'utilisateur existe dans la base de donnée
+ */
     public function logIn($user_email, $user_password) {
         $query = $this->getPdo()->prepare('SELECT * FROM users WHERE user_email = ?');
         $query->execute([$user_email]);
@@ -143,7 +159,9 @@ public function test()
     }
 
     }
-
+/**
+ * Stocke les informations de l'utilisateur connectée dans la session
+ */
     private function sessionUser($user_id,$user_name, $user_firstname, $user_email, $user_password, $user_image){
         if(session_status() == PHP_SESSION_NONE){
             session_start();
@@ -158,11 +176,15 @@ public function test()
         }
     }
 
-
+/**
+ * return current user ID
+ */
     public function currentUserId(){
         return $_SESSION['user']['user_id'];
     }
-
+/**
+ * return image profil of current user
+ */
     public function getUseImageprofil($id){
         $query = $this->getPdo()->prepare('SELECT user_image FROM users WHERE id = ?');
         $query->execute([$id]);
