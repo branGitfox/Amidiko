@@ -27,7 +27,7 @@ $login->checkUser();
             <?php endif ?>
         <form action="" method="post">
             <label for="email">Email</label>
-            <input type="email"  id="email" required placeholder="Entrez votre Email" name="user_email">
+            <input type="email"  id="email" required placeholder="Entrez votre Email" name="user_email" <?php if($login->autoCompleteLoGInInput() != null):?> value="<?= $login->autoCompleteLoGInInput()?>"<?php endif?>>
             <label for="password">Mot de passe</label>
             <input type="password" id="password" required placeholder="Entrez votre Mot de passe" name="user_password">
             <svg class="open" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">

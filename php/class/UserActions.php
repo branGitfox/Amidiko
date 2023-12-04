@@ -191,7 +191,18 @@ class UserActions {
         return  $query->fetch();
     }
 
+    /**
+     * Autocomplete INPUT
+     * complete automatiquement les inputs au cas d'un erreur d'information par l'utilisateur
+     */
     
+
+     public function autoCompleteLoGInInput(){
+        if(isset($_POST['user_email']) && !empty($_POST['user_email'])){
+            return htmlentities(htmlspecialchars($_POST['user_email']));
+        }
+        return null;
+     }
     
 
 }
