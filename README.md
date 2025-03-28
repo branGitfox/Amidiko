@@ -5,4 +5,4 @@ Amidiko is `E-commerce` plateforme which used people to sell and buy things the 
 I notice that it not yet finished, you can help me te finish it by contributing.
 
 
-!
+
